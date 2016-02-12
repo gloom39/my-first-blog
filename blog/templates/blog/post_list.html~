@@ -1,21 +1,18 @@
 <html>
-<head>
-<title>Welcome to my page</title>
-</head>
-<style>
-body{
-background-image:url("file:///home/nobita/anime.png");
-}
-</style>
-<body>
-<center><h1>Welcome to Anime World</h1></center>
-<div>
-<h1><a href="">My first post</a></h1>
-<p>Published on 11/09/2014 , 12:35
-</div>
-<div>
-<h1><a href="">My Second post</a></h1>
-<p>Published on 12/12/2014 , 12:35
-</div>
-</body>
+    <head>
+        <title>Django Girls blog</title>
+    </head>
+    <body>
+        <div>
+            <h1><a href="">Django Girls Blog</a></h1>
+        </div>
+
+   {% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaks }}</p>
+    </div>
+   {% endfor %}
+    </body>
 </html>
